@@ -1,23 +1,23 @@
 def solution(progresses, speeds):
    answer = []
-   N = len(progresses)
-   process = [0 for _ in range(N)]
-   stack = []
-   for i in range(N):
-      if (100 - progresses[i]) % speeds[i] == 0:
-         process[i] = (100 - progresses[i]) // speeds[i]
-      else:
-         process[i] = (100 - progresses[i]) // speeds[i] + 1
+   # 작업 시간 처리 
+   days = [(100 - p) // s + (1 if (100 - p) % s > 0 else 0) for p, s in zip(progresses, speeds)]
+   
+   stack = [days[0]]
+   for i in range(1, len(days)):
+      print(f"stack 전 : {stack}")
+      if stack and stack[0] < days[i]:
+         answer.append(len(stack))
+         print(f"answer: {answer}")
+         stack = []
+      stack.append(days[i])
+      print(f"stack 후 : {stack}")
+      print()
+   
+   if stack:   # 스택이 남아있는 작업 처리 
+      answer.append(len(stack))
       
-      if stack and stack[0] > process[i]:
-         stack.append(process[i])
-      if stack[0] == i + 1:
-         stack
-
-
-   print(process)
-
-
    return answer
 
-print(solution([93, 30, 55], [1, 30, 5]))
+# print(solution([93, 30, 55], [1, 30, 5]))
+print(solution([95, 90, 99, 99, 80, 99], [1, 1, 1, 1, 1, 1]))
