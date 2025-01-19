@@ -116,3 +116,72 @@ def solution(words, queries):
       answer.append(res)
                   
    return answer 
+
+
+# ver 3 - 트라이 
+class Node:
+   def __init__(self):
+      self.children = {}
+      self.count = 0 
+
+class Trie:
+   def __init__(self):
+      self.root = Node()
+
+   def insert(self, word):
+      node = self.root
+      node.count += 1
+      for w in word:
+         if w not in node.children:
+            node.children[w] = Node()
+
+         node = node.children[w]
+         node.count += 1
+
+   def search(self, query):
+      node = self.root
+      for q in query:
+         if q == "?":
+            return node.count
+
+         if q not in node.children:
+            return 0
+
+         node = node.children[q]
+
+      return node.count 
+
+   
+
+def solution(words, queries):    
+   trie_dict = {}
+   reverse_dict = {}
+   result = [] 
+
+   for word in words:
+      length = len(word)
+
+      if length not in trie_dict:
+         trie_dict[length] = Trie()
+         reverse_dict[length] = Trie()
+      
+      trie_dict[length].insert(word)
+      reverse_dict[length].insert(word[::-1])
+   
+   for query in queries:
+      length = len(query)
+
+      if length not in trie_dict:
+         result.append(0)
+         continue
+
+      if query[0] != "?":
+         res = trie_dict[length].search(query)
+      else:
+         res = reverse_dict[length].search(query[::-1])
+   
+      result.append(res)
+   
+   return result 
+ 
+print(solution(["frodo", "front", "frost", "frozen", "frame", "kakao"], ["fro??", "????o", "fr???", "fro???", "pro?"]))
