@@ -47,10 +47,9 @@ public class Mirror_Setting_2151_Dijkstra {
                 return;
             }
 
-            // If the current distance is greater than the recorded distance, skip
+            // 노드가 소유한 거울 개수보다 dist 배열의 개수가 작으면 패스
             if (curNode.cnt > dist[curNode.r][curNode.c][curNode.dir]) continue;
 
-            // Move straight in the current direction
             int nr = curNode.r + dr[curNode.dir];
             int nc = curNode.c + dc[curNode.dir];
 
@@ -61,9 +60,9 @@ public class Mirror_Setting_2151_Dijkstra {
                 }
             }
 
-            // If the current cell can have a mirror, try turning 90 degrees left and right
+            // 거울이 있을 경우 방향 바꾸기
             if (house[curNode.r][curNode.c] == '!') {
-                for (int i = 1; i <= 3; i += 2) { // Turn 90 degrees left and right
+                for (int i = 1; i <= 3; i += 2) {
                     int newDir = (curNode.dir + i) % 4;
                     if (curNode.cnt + 1 < dist[curNode.r][curNode.c][newDir]) {
                         dist[curNode.r][curNode.c][newDir] = curNode.cnt + 1;
