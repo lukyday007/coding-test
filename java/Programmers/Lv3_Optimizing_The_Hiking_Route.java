@@ -5,6 +5,7 @@ public class Lv3_Optimizing_The_Hiking_Route  {
     static final int INF = Integer.MAX_VALUE;
     static List<List<Edge>> graph = new ArrayList<>();
     static int[] result;
+    // Set으로 다른 게이트나 정점을 조회하는 게 시간 단축이 많이 됨!!!
     static Set<Integer> gates, summits;
 
     /*
