@@ -2,7 +2,7 @@ package PACKAGE_NAME;
 import java.util.*;
 
 public class Lv3_Shared_Taxi_Fare {
-        /*
+    /*
         지점갯수 n은 3 이상 200 이하인 자연수
         지점 s, a, b는 1 이상 n 이하인 자연수
         fares는 2차원 정수 배열
