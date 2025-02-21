@@ -12,7 +12,6 @@ public class Lv3_Shared_Taxi_Fare {
     static int N;
     static int[][] dist;
     static int INF = Integer.MAX_VALUE;
-    static boolean[] visited;
 
     public static void floydWarshall() {
         for (int m = 0; m < N; m ++) {
@@ -30,7 +29,6 @@ public class Lv3_Shared_Taxi_Fare {
     public int solution(int n, int s, int a, int b, int[][] fares) {
         int answer = INF;
         dist = new int[n][n];
-        visited = new boolean[n];
         E = fares.length;
         N = n;
 
