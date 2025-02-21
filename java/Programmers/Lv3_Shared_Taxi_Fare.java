@@ -51,8 +51,7 @@ public class Lv3_Shared_Taxi_Fare {
 
 
         for (int i = 0; i < N; i ++)
-            answer = Math.min(answer, dist[s-1][i] + dist[a-1][i]
-                    + dist[b-1][i]);
+            answer = Math.min(answer, dist[s-1][i] + dist[a-1][i] + dist[b-1][i]);
 
         return answer;
     }
