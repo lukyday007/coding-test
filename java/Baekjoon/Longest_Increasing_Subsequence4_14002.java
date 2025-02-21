@@ -47,7 +47,7 @@ public class Longest_Increasing_Subsequence4_14002 {
             }
         }
 
-        // 뒤에서 부터 정답에 해당하는 행렬 저장하기
+        // [문제 & 해결] 뒤에서 부터 정답에 해당하는 행렬 저장하기
         List<Integer> result = new ArrayList<>();
         int num = answer;
         int idx = N;
