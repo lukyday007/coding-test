@@ -28,7 +28,7 @@ public class Greedy_Panda_1937_PriorityQueue_DP {
         최대한 많은 칸을 이동하려면 어떤 경로를 통하여 움직여야 하는지
 
         [error1] 메모리 초과 -> 중복된 경로의 우선순위 큐가 많이 생겨서! => visited 처리
-        [error1] 답이 틀림... -> 왜 때문일까.. -> 대나무 오름차순으로 정렬 + dp
+        [error1] 답이 틀림... -> 왜 때문일까.. 역시 dp? -> 대나무 오름차순으로 정렬 + dp
     */
 
     public static int solve() {
