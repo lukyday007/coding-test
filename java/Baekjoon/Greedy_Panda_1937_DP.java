@@ -44,7 +44,7 @@ public class Greedy_Panda_1937_DP {
         int maxMove = 0;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                maxMove = Math.max(maxMove, dfs(i, j)); // 모든 위치에서 DFS 수행
+                maxMove = Math.max(maxMove, dfs(i, j)); // 모든 위치에서 DFS
             }
         }
 
