@@ -28,28 +28,16 @@ public class Water_Bottle_1052 {
         N = Integer.parseInt(st.nextToken());
         K = Integer.parseInt(st.nextToken());
 
-        int newBottle = 0;
-        boolean flag = false;
-        int cnt = 0;
-        while (true) {
-            cnt = (int) Integer.toBinaryString(N).chars().filter(a -> a == '1').count();
-//            System.out.println("cnt: " + cnt + ", binary : " + Integer.toBinaryString(N));
+        int ans = 0;
 
-            if (cnt <= K)   // 구매한 병의 개수가 조건에 맞다면 정지
-                break;
-
-            if (newBottle > N) {
-                flag = true;
-                break;
-            }
-
-            N ++;
-            newBottle ++;
+        // Integer.bitCount(N) : N을 이진수로 변환했을 때, 1의 개수가 몇 개인지 반환
+        while (Integer.bitCount(N) > K) {
+            // Integer.lowestOneBit(N) : Integer.lowestOneBit(N)는 N의 이진수에서 가장 오른쪽에 있는 1 비트만 반환
+            // binary 111'1' -> + 1, binary 11'1'0 -> + 2
+            ans += Integer.lowestOneBit(N);
+            N += Integer.lowestOneBit(N);
         }
 
-        if (flag)
-            System.out.println(-1);
-        else
-            System.out.println(newBottle);
+        System.out.println(ans);
     }
 }
