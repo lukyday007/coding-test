@@ -6,14 +6,6 @@ public class Tree_1068 {
     static int[] tree;
     static List<List<Integer>> Graph = new ArrayList<>();
 
-    public static class Node {
-        int node; boolean isEnd;
-        public Node(int node, boolean isEnd) {
-            this.node = node;
-            this.isEnd = isEnd;
-        }
-    }
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
