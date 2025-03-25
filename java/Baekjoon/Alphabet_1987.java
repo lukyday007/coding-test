@@ -5,23 +5,28 @@ public class Alphabet_1987 {
     static int R, C;
     static int MaxVal = Integer.MIN_VALUE;
     static char[][] board;
-    static boolean[][] check;
+    static boolean[] check;
     static int[] dr = {1, -1, 0, 0} , dc = {0, 0, -1, 1};
 
-    public static void dfs(int r, int c, Set<Character> alphabets) {
+    /*
+        문자에서 정수 인덱스를 얻는 방법!
+        => board[nr][nc] - 'A'
+    */
 
-        if (alphabets.size() > MaxVal) {
-            MaxVal = Math.max(alphabets.size(), MaxVal);
+    public static void dfs(int r, int c, int total, int idx) {
+
+        if (total > MaxVal) {
+            MaxVal = Math.max(total, MaxVal);
         }
         for (int d = 0; d < 4; d ++) {
             int nr = r + dr[d], nc = c + dc[d];
-            if (nr < 0 || nr >= R || nc < 0 || nc >= C || check[nr][nc] || alphabets.contains(board[nr][nc])) continue;
+            if (nr < 0 || nr >= R || nc < 0 || nc >= C) continue;
+            idx = board[nr][nc] - 'A';
+            if (check[idx]) continue;
 
-            check[nr][nc] = true;
-            alphabets.add(board[nr][nc]);
-            dfs(nr, nc, alphabets);
-            alphabets.remove(board[nr][nc]);
-            check[nr][nc] = false;
+            check[idx] = true;
+            dfs(nr, nc, total + 1, idx);
+            check[idx] = false;
         }
     }
 
@@ -43,12 +48,10 @@ public class Alphabet_1987 {
 //        for (int r = 0; r < R; r ++)
 //            System.out.println(Arrays.toString(board[r]));
 
-        check = new boolean[R][C];
-        Set<Character> alphabets = new HashSet<>();
-        alphabets.add(board[0][0]);
-        check[0][0] = true;
-        dfs(0, 0, alphabets);
+        check = new boolean[26];
+        check[board[0][0] - 'A'] = true;
 
+        dfs(0, 0, 1, 0);
         System.out.println(MaxVal);
     }
 }
