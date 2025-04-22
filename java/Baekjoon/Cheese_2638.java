@@ -59,6 +59,7 @@ public class Cheese_2638 {
 
             if (meltList.isEmpty()) break;
 
+            // 일단 내부 공기인 걸로 설정 - markOutsideAir 에서 2인지 0인지 판단
             for (int[] pos : meltList) {
                 board[pos[0]][pos[1]] = 0;
             }
