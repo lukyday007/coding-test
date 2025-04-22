@@ -89,13 +89,5 @@ public class Cheese_2638 {
             }
         }
 
-        // 내부 공기 리셋: 외부공기 2 외의 0은 다시 0으로 유지
-        for (int r = 0; r < R; r++) {
-            for (int c = 0; c < C; c++) {
-                if (board[r][c] == 2 && !visited[r][c]) {
-                    board[r][c] = 0;
-                }
-            }
-        }
     }
 }
