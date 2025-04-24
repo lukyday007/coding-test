@@ -9,11 +9,13 @@ public class Double_Ended_Priority_Queue_7662 {
         우선순위 큐에 계속 값이 남아있는 이유
         => HashMap의 값이 0이하일 때의 무효값이 정리되지 않은 상태로 남아있음 -> while문으로 정리
 
-1
-3
-I 5
-D -1
-I 4
+        [ Optimization ] TreeMap : 내부적으로 **Red-Black Tree (이진 탐색 트리의 일종)**를 기반으로 구현
+        값을 삽입하거나 삭제할 때마다 자동으로 정렬된 상태를 유지
+        1
+        3
+        I 5
+        D -1
+        I 4
         answer 4 4
         output 5 4
     */
