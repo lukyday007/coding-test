@@ -23,12 +23,13 @@ public class Hide_and_Seed4_13913 {
         BFS(N, K, 0);
 
         List<Integer> route = new ArrayList<>();
+        // 17 - 16 - 8 - 4 - 5 를 역순으로 접근
         for (int i = K; i != -1; i = path[i]) {
             route.add(i);
         }
         Collections.reverse(route);
-
         System.out.println((route.size() - 1));
+
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < route.size(); i ++) {
             sb.append(route.get(i)).append(" ");
