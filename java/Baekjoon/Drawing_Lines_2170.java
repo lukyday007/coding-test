@@ -13,7 +13,6 @@ public class Drawing_Lines_2170 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         ArrayList<long[]> arr = new ArrayList<>();
-        boolean[] check = new boolean[2000000001];
 
         StringTokenizer st;
         for(int i = 0; i < N; i ++) {
