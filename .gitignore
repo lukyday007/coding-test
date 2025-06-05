@@ -1,0 +1,26 @@
+# 💻 IntelliJ
+*.iml
+.idea/
+**/.idea/
+**/*.iml
+workspace.xml
+shelf/
+
+# 📦 Java 빌드
+/out/
+build/
+target/
+*.class
+*.jar
+*.war
+
+# 🍏 macOS
+.DS_Store
+
+# 🔧 VSCode
+.vscode/
+
+# 🧪 테스트/로그
+*.log
+coverage/
+*.lcov
