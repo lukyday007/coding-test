@@ -12,6 +12,7 @@ public class Hanoi_11729 {
 
         int cnt = (int) Math.pow(2, N) - 1;
         sb.append(cnt).append("\n");
+
         hanoi(N, 1, 3, 2);
         System.out.println(sb);
     }
