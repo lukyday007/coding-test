@@ -19,7 +19,7 @@ public class Lv3_Double_PriorityQueue {
                     desc.offer(num);
                     set.add(num);
                 } else if (command.equals("D")) {
-                    if (set.isEmpty()) continue;
+                    if (set.isEmpty()) continue;    // set 기준으로 체크
 
                     if (num == 1) {
                         // 최대값 삭제
