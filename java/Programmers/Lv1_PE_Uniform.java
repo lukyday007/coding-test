@@ -4,7 +4,7 @@ import java.util.*;
 public class Lv1_PE_Uniform {
 
     /*
-        여벌의 체육복을 도난당할 케이스도 존재! -> 다른 학생에게 못 빌려줌
+        여벌의 체육복을 도난당할 케이스도 존재! -> 다른 학생에게 체육복 못 빌려줌
     */
     class Solution {
 
