@@ -2,7 +2,6 @@ package Programmers;
 import java.util.*;
 
 public class Lv3_Network {
-
     class Solution_bfs {
         static boolean[] visited;
 
