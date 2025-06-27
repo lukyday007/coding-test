@@ -1,3 +1,4 @@
+package Baekjoon;
 import java.util.*;
 import java.io.*;
 
@@ -5,10 +6,10 @@ public class Bipartite_Graph_1707 {
     static int K;
 
     /*
-            각 집합에 속한 정점끼리는 서로 인접하지 않도록 분할할 수 있을 때, 그러한 그래프를 특별히 이분 그래프 (Bipartite Graph) 라 부른다.
-            =>  인접한 노드들끼리 같은 색깔 방문이면 안됨!
-            [error 1] 그래프 초기화 주의!
-     */
+        각 집합에 속한 정점끼리는 서로 인접하지 않도록 분할할 수 있을 때, 그러한 그래프를 특별히 이분 그래프 (Bipartite Graph) 라 부른다.
+        =>  인접한 노드들끼리 같은 색깔 방문이면 안됨!
+        [error 1] 그래프 초기화 주의!
+    */
 
     public static boolean isPossible(List<List<Integer>> Graph, int V) {
         int[] visit = new int[V + 1];
