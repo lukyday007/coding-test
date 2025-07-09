@@ -1,5 +1,4 @@
-package Baekjoon.src;
-import java.util.*;
+package Baekjoon;
 import java.io.*;
 
 public class Missing_Parentheses_1541 {
