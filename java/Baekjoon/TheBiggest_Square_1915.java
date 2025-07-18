@@ -7,6 +7,7 @@ import java.util.StringTokenizer;
 public class TheBiggest_Square_1915 {
     /*
         [way1] 완전탐색 -> (당연하지만) 시간초과 O(N^2 * M^2)
+        [way2] dp -> O(N * M) => Pass!
      */
 
     static class Solution_DP {
