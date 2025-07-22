@@ -4,6 +4,12 @@ import java.util.*;
 import java.io.*;
 
 public class Shortcut_1446 {
+
+    /*
+        dp가 적합하고 다익스트라는 아닌 이유
+        -> 전체 노드가 선형이고, "모든 노드가 번호순으로만 전진"하기 때문
+        -> 다익스트라는 "가중치가 다양하거나 노드 간 이동 방향이 비선형적일 때" 적합
+    */
     static int N, D;
     static List<List<Path>> shortcut = new ArrayList<>();
 
