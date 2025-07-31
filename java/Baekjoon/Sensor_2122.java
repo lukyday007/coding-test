@@ -34,6 +34,8 @@ public class Sensor_2122 {
         for (int i = 0; i < N - K; i ++)
             sum += gaps[i];
 
-        System.out.println(sum);
+        bw.write(String.valueOf(sum));
+        bw.flush();
+        bw.close();
     }
 }
